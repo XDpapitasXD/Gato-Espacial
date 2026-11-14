@@ -1,0 +1,157 @@
+[gd_scene format=3 uid="uid://bop4anfdorjya"]
+
+[ext_resource type="Script" uid="uid://betyrnd7enhqr" path="res://pantalla_victoria.gd" id="1_xitq6"]
+[ext_resource type="Texture2D" uid="uid://d0cchfem6d8xt" path="res://CAMBIO DE FONDO (1).png" id="2_081qx"]
+[ext_resource type="Texture2D" uid="uid://cu4wb6k1m1b8f" path="res://meteorito.png" id="3_bjouw"]
+[ext_resource type="Script" uid="uid://dx72yjg4tx80r" path="res://meteoro_animado.gd" id="4_fa7vr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5h11f"]
+line_spacing = 4.0
+font_size = 28
+font_color = Color(0.31426892, 0.22426856, 0.7837244, 1)
+outline_size = 3
+outline_color = Color(0, 1, 1, 1)
+shadow_size = 10
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jinvv"]
+atlas = ExtResource("3_bjouw")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_27x7b"]
+atlas = ExtResource("3_bjouw")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_16pb1"]
+atlas = ExtResource("3_bjouw")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rt1td"]
+atlas = ExtResource("3_bjouw")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1jvt"]
+atlas = ExtResource("3_bjouw")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3oxy0"]
+atlas = ExtResource("3_bjouw")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7dpq"]
+atlas = ExtResource("3_bjouw")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h78d3"]
+atlas = ExtResource("3_bjouw")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mqs2h"]
+atlas = ExtResource("3_bjouw")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fgx8s"]
+atlas = ExtResource("3_bjouw")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfq4t"]
+atlas = ExtResource("3_bjouw")
+region = Rect2(640, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0jqo2"]
+atlas = ExtResource("3_bjouw")
+region = Rect2(704, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_67art"]
+atlas = ExtResource("3_bjouw")
+region = Rect2(768, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y12jj"]
+atlas = ExtResource("3_bjouw")
+region = Rect2(832, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5h11f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jinvv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_27x7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_16pb1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rt1td")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1jvt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3oxy0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t7dpq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h78d3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mqs2h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fgx8s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfq4t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0jqo2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_67art")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y12jj")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="PantallaVictoria" type="Control" unique_id=504504034]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_xitq6")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1970961680]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -76.0
+offset_top = -12.0
+offset_right = 1152.0
+offset_bottom = 645.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_081qx")
+
+[node name="Label" type="Label" parent="." unique_id=548856664]
+layout_mode = 0
+offset_right = 102.0
+offset_bottom = 23.0
+scale = Vector2(4.5695567, 3.5748675)
+text = "GANASTE!"
+label_settings = SubResource("LabelSettings_5h11f")
+
+[node name="MeteoroAnimado" type="AnimatedSprite2D" parent="." unique_id=1601091473]
+position = Vector2(472, 253)
+scale = Vector2(-3.9272757, 4.097198)
+sprite_frames = SubResource("SpriteFrames_5h11f")
+autoplay = "default"
+frame = 13
+frame_progress = 1.0
+script = ExtResource("4_fa7vr")

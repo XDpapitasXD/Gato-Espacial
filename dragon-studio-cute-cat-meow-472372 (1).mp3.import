@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bp15pqoxdftcf"
+path="res://.godot/imported/dragon-studio-cute-cat-meow-472372 (1).mp3-b76249c7acb373ee065994e32ea5c4aa.mp3str"
+
+[deps]
+
+source_file="res://dragon-studio-cute-cat-meow-472372 (1).mp3"
+dest_files=["res://.godot/imported/dragon-studio-cute-cat-meow-472372 (1).mp3-b76249c7acb373ee065994e32ea5c4aa.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

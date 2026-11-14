@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://dy2t44jp7aaaw"]
+
+[ext_resource type="Texture2D" uid="uid://c1f8sdob3ooig" path="res://Fuego.png" id="1_k81bs"]
+[ext_resource type="Script" uid="uid://cwl513iki885f" path="res://bola_de_fuego.gd" id="1_q548t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g02kb"]
+atlas = ExtResource("1_k81bs")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agcnr"]
+atlas = ExtResource("1_k81bs")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3w576"]
+atlas = ExtResource("1_k81bs")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5o30h"]
+atlas = ExtResource("1_k81bs")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdsc2"]
+atlas = ExtResource("1_k81bs")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efusf"]
+atlas = ExtResource("1_k81bs")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gua8c"]
+atlas = ExtResource("1_k81bs")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nj8q3"]
+atlas = ExtResource("1_k81bs")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5h11f"]
+animations = [{
+"frames": [{
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_g02kb")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_agcnr")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_3w576")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5o30h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bdsc2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efusf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gua8c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nj8q3")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5h11f"]
+size = Vector2(39, 39)
+
+[node name="BolaDeFuego" type="Area2D" unique_id=1335488198]
+collision_layer = 2
+script = ExtResource("1_q548t")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1012740961]
+sprite_frames = SubResource("SpriteFrames_5h11f")
+frame_progress = 0.61255026
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1731486181]
+position = Vector2(-1.5, -3.5)
+shape = SubResource("RectangleShape2D_5h11f")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

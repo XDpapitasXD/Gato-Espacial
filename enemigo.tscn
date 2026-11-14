@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://cmwdw8kgbef6b"]
+
+[ext_resource type="Script" uid="uid://b67befkv0d6jt" path="res://enemigo.gd" id="1_a5tj2"]
+[ext_resource type="Texture2D" uid="uid://7gaarypdpu1q" path="res://ALIEEN1.png" id="2_moxti"]
+[ext_resource type="AudioStream" uid="uid://bmordqcn0vpj7" path="res://WhatsApp Audio 2026-11-14 at 3.48.02 PM.mp3" id="3_moxti"]
+[ext_resource type="AudioStream" uid="uid://bvg0i38yb65vn" path="res://freesound_community-double-squeak-2-103875.mp3" id="4_bnx68"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d21ai"]
+atlas = ExtResource("2_moxti")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdubu"]
+atlas = ExtResource("2_moxti")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6r6c"]
+atlas = ExtResource("2_moxti")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hol4"]
+atlas = ExtResource("2_moxti")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_epypp"]
+atlas = ExtResource("2_moxti")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_veups"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d21ai")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdubu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6r6c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hol4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_epypp")
+}],
+"loop": 1,
+"name": &"caminar",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5h11f"]
+size = Vector2(2500, 2600)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bx8n8"]
+size = Vector2(35, 32)
+
+[node name="Node2D" type="CharacterBody2D" unique_id=71147087]
+scale = Vector2(0.001, 0.001)
+script = ExtResource("1_a5tj2")
+
+[node name="Alieen1" type="AnimatedSprite2D" parent="." unique_id=596053662]
+texture_filter = 1
+position = Vector2(645, 325)
+scale = Vector2(410.8703, 458.54733)
+sprite_frames = SubResource("SpriteFrames_veups")
+animation = &"caminar"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=592057215]
+position = Vector2(500.00003, 1000.0002)
+scale = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_5h11f")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=860560253]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=899823297]
+position = Vector2(499.99997, -1000.0004)
+scale = Vector2(999.99994, 999.99994)
+shape = SubResource("RectangleShape2D_bx8n8")
+
+[node name="SonidoDisparo" type="AudioStreamPlayer2D" parent="." unique_id=2094053512]
+stream = ExtResource("3_moxti")
+volume_db = -1.0
+
+[node name="SonidoMuerte" type="AudioStreamPlayer2D" parent="." unique_id=260099887]
+stream = ExtResource("4_bnx68")
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
